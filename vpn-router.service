@@ -1,0 +1,12 @@
+[Unit]
+Description=VPN Router IPtables Rules
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/apply-vpn-rules.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
